@@ -16,8 +16,9 @@
 //= require activestorage
 //= require_tree .
 
-
 $(document).ready(function() {
+
+  $("#submit_bnt_real").css("visibility", "hidden");
 
   $("#imagePlus").click(function(){   
     $("#div_AddTodo").css("visibility", "visible");
@@ -28,11 +29,9 @@ $(document).ready(function() {
     $("#div_AddTodo").css("visibility", "hidden");
   });
 
-  $("#submit-btn").click(function(event) {
+  $("#submit_bnt_fake").click(function(event) {
     event.preventDefault();
-    $("#form-id").submit();
-  });
-
-  
+    $("#submit_bnt_real").click();
+  });  
 
 });

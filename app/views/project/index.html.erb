@@ -12,9 +12,9 @@
 <h1>Новая задача</h1>
 <%= form_for :newTodo, id:'form_id', method: "post", :url => {:action => "createTodo"} do |f| %>
 <%= f.text_field :text %><br />
-<%= f.collection_select :project_id, @projects, :id, :title %><br />
+<%= f.collection_select :project_id, @projects, :id, :title %>
+<%= f.submit "OK", id: "submit_bnt_real" %>
 <%end%>
 <%= link_to 'ОТМЕНА', "", id: "hideDiv" %>
-<%= link_to 'OK', "", id: "submit_bnt" %>
-
+<%= link_to 'OK', "", id: "submit_bnt_fake" %>
 </div>
