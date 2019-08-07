@@ -8,7 +8,7 @@
 <% end %>
 
 <br />
-<div id="div_AddTodo">
+<div id="div_AddTodo" style="visibility: hidden">
 <h1>Новая задача</h1>
 <%= form_for :newTodo, id:'form_id', method: "post", :url => {:action => "createTodo"} do |f| %>
 <%= f.text_field :text %><br />
