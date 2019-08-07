@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'yaml'
+
+seed_file = File.join(File.dirname(__FILE__), 'seeds.yml')
+config = ActiveSupport::HashWithIndifferentAccess[ YAML::load_file(seed_file) ]
+config[:projects].each do |project|
+    p = Project.new(title: project[:title])
+    project[:todos].each do |todo|
+        p.todos << Todo.create(todo)
+    end
+    p.save!
+end

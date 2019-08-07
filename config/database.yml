@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: postgres
+  database: Traning3
   username: zoglam
   password: 6427
 

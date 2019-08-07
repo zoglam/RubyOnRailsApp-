@@ -1,0 +1,20 @@
+<% @projects.each do |project| %>
+  <h2><%= project.title %></h2>
+  <% Todo.all.each do |newTodo| %>
+  <% if newTodo.project_id == project.id %>
+    <ul><li><%= newTodo.text %></li></ul>
+  <% end %>
+  <% end %>
+<% end %>
+
+<br />
+<div id="div_AddTodo">
+<h1>Новая задача</h1>
+<%= form_for :newTodo, id:'form_id', method: "post", :url => {:action => "createTodo"} do |f| %>
+<%= f.text_field :text %><br />
+<%= f.collection_select :project_id, @projects, :id, :title %><br />
+<%end%>
+<%= link_to 'ОТМЕНА', "", id: "hideDiv" %>
+<%= link_to 'OK', "", id: "submit_bnt" %>
+
+</div>
