@@ -1,20 +1,53 @@
-<% @projects.each do |project| %>
-  <h2><%= project.title %></h2>
-  <% Todo.all.each do |newTodo| %>
-  <% if newTodo.project_id == project.id %>
-    <ul><li><%= newTodo.text %></li></ul>
-  <% end %>
-  <% end %>
-<% end %>
+<section class="block_1">
+  <header id="header">
+    <p id="title">Задачи</p>
+    <img src="/assets/TodoIcon.png" id="imagePlus" alt="plus">  
+  </header>
+</section>
 
-<br />
-<div id="div_AddTodo" style="visibility: hidden">
-<h1>Новая задача</h1>
-<%= form_for :newTodo, id:'form_id', method: "post", :url => {:action => "createTodo"} do |f| %>
-<%= f.text_field :text %><br />
-<%= f.collection_select :project_id, @projects, :id, :title %>
-<%= f.submit "OK", id: "submit_bnt_real" %>
-<%end%>
-<%= link_to 'ОТМЕНА', "", id: "hideDiv" %>
-<%= link_to 'OK', "", id: "submit_bnt_fake" %>
+<section class="block_2">
+
+      <div id="div_show">      
+      <div class="container">
+  <div class="row">
+    <div class="col-sm">
+        <% @projects.each do |project| %>
+        
+          <div id="project_div">
+            <p><%= project.title %></p>
+            <% @todos.each do |newTodo| %>
+              <% if newTodo.project_id == project.id %>      
+                <%= form_for :completedTodo, id:'form_id', method: "post", :url => {:action => "completedTodo"} do |f1| %>
+                  <%= f1.text_field :id, value: newTodo.id, class: "const_id_todo", style: "display: none"  %>
+                  <% if newTodo.isCompleted == false %>
+                    <%= f1.check_box :isCompleted, class: 'check_todo', checked: "unchecked", id: newTodo.id%>
+                  <%else%>
+                    <%= f1.check_box :isCompleted, class: 'check_todo', checked: "checked", id: newTodo.id%>
+                  <%end%>
+                  <span class="line_width">
+                    <span class="text_todo_<%=String(newTodo.id)%>", id="text_todo"><%= newTodo.text %></span>
+                  </span>
+                  <%= f1.submit "OK", class: "submit_bnt_real_isCompleted_"+String(newTodo.id), style: "display: none" %><br />
+                <% end %>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>   
+      </div>
+  </div>
 </div>
+</section>
+
+<section class="block_3" style="display: none">
+  <div id="div_addTodo" class="div_addTodo">
+    <p class="title_new_todo">НОВАЯ ЗАДАЧА</p>
+    <%= form_for :newTodo, id:'form_id', method: "post", :url => {:action => "createTodo"} do |f2| %>
+      <%= f2.text_field :text, placeholder: "Название задачи..." %><br />
+      <%= f2.collection_select :project_id, @projects, :id, :title, {:prompt => "Категория"} %>
+      <%= f2.submit "OK", class: "submit_bnt_real", style: "display: none" %>
+    <%end%>
+    <%= link_to 'ОТМЕНА', "", class: "hideDiv" %>
+    <%= link_to 'OK', "", class: "submit_bnt_fake" %>
+  </div>
+</section>

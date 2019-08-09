@@ -16,22 +16,40 @@
 //= require activestorage
 //= require_tree .
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-  $("#submit_bnt_real").css("visibility", "hidden");
-
-  $("#imagePlus").click(function(){   
-    $("#div_AddTodo").css("visibility", "visible");
+  $('.check_todo').iCheck({
+    checkboxClass: 'icheckbox_square-blue'
   });
 
-  $("#hideDiv").click(function(event){
-    event.preventDefault();
-    $("#div_AddTodo").css("visibility", "hidden");
+  $('.check_todo').on('ifChanged', function () {
+    $(".submit_bnt_real_isCompleted_" + this.id).click();
   });
 
-  $("#submit_bnt_fake").click(function(event) {
+  $("#imagePlus").click(function () {
+    $(".block_3").css("display", "block");
+  });
+
+  $(".hideDiv").click(function (event) {
     event.preventDefault();
-    $("#submit_bnt_real").click();
-  });  
+    $(".block_3").css("display", "none");
+  });
+
+  $(".submit_bnt_fake").click(function (event) {
+    event.preventDefault();
+    $(".submit_bnt_real").click();
+  });
+
+  $(window).resize(function () {
+    $('.div_addTodo').css({
+      position: 'absolute',
+      left: ($(window).width() - $('.div_addTodo').outerWidth()) / 2,
+      top: ($(window).height() - $('.div_addTodo').outerHeight()) / 2
+    });
+    $('.block_3').css({
+      height: $(document).outerHeight(true)
+    });
+  });
+  $(window).resize();
 
 });

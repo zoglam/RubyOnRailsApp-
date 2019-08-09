@@ -2,16 +2,13 @@
 <html>
   <head>
     <title>BlogHeroku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %> 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %> 
-  </head>
-
-  <h1>Задачи</h1>
-  <img src="/assets/TodoIcon.png" id="imagePlus" alt="plus">
-
+  </head>  
   <body>
     <%= yield %>
   </body>

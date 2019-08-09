@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'project' => 'project#index'
   post 'project/createTodo' => 'project#createTodo'
+  post 'project/completedTodo' => 'project#completedTodo'
   root 'project#index'
 
   resources :project

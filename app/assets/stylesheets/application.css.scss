@@ -1,0 +1,166 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #F8F8F8;
+}
+
+.block_1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #3AAFDA;
+  height: 54px;
+  width: 100%;
+  text-align: center;
+}
+
+.block_2 {
+  background-color: #F8F8F8;
+}
+
+.block_3 {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+}
+
+#title {
+  position: absolute;
+  color: #fff;
+  font-size: 25px;
+  top: 50%;
+  margin-top: -0.625em;
+  display: inline-block;
+}
+
+#imagePlus {
+  position: relative;
+  float: right;
+  padding-right: 20px;
+  padding-top: 18px;
+}
+
+#imagePlus:hover {
+  filter: invert(.8);
+}
+
+#project_div {
+  box-shadow: 0 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.3);
+  padding: 0px;
+  margin: 20px;
+  display: inline-block;
+  width: 350px;
+  vertical-align: top;
+  font-size: 12px;
+  padding-top: 5px;
+}
+
+#project_div p {
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  text-transform: uppercase;
+  height: 30px;
+  line-height: 30px;
+}
+
+#project_div form {
+  margin: 20px;
+}
+
+#text_todo {
+  margin-left: 25px;
+  font-size: 12px;
+}
+
+.line_width {
+  font-size: 18px;
+}
+
+.checked~.line_width {
+  text-decoration: line-through;
+}
+
+#div_addTodo {
+  width: 350px;
+  background-color: #fff;
+}
+
+.title_new_todo {
+  font-weight: bold;
+  text-align: center;
+  height: 40px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  line-height: 40px;
+  font-size: 11px;
+}
+
+#newTodo_text,
+#newTodo_project_id {
+  margin: 10px 10px 0 10px;
+  width: 330px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 4px;
+}
+
+#newTodo_text {
+  padding-left: 8px;
+}
+
+.hideDiv,
+.submit_bnt_fake {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  float: left;
+  width: 162.5px;
+  height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 30px;
+  font-size: 10px;
+}
+
+.hideDiv:hover,
+.submit_bnt_fake:hover {
+  text-decoration: none;
+}
+
+.hideDiv {
+  margin-left: 10px;
+  margin-right: 5px;
+  background-color: #9F9F9F;
+}
+
+.submit_bnt_fake {
+  background-color: #3AAFDA;
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 1250px;
+  }
+}
