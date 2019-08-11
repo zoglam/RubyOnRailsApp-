@@ -2,7 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical">
+    android:gravity="center_vertical"
+    android:padding="15dp">
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/todo_cb"
+        android:clickable="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/systemBlackColor"/>
 
     <TextView
         android:id="@+id/text"
@@ -12,6 +21,10 @@
         android:gravity="center_vertical"
         android:padding="5dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FF000000" />
+        android:textColor="#FF000000"
+        />
 
 </LinearLayout>
+
+    <!-- todos
+        Элементы -->

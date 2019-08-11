@@ -8,7 +8,7 @@
         android:id="@+id/textSeparator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFF"
+        android:background="#F8F8F8"
         android:gravity="center_vertical"
         android:padding="5dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -17,4 +17,5 @@
 
 </LinearLayout>
 
-<!-- Section -->
+<!-- Section
+    Оглавление -->

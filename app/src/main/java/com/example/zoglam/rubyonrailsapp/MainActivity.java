@@ -22,6 +22,8 @@ public class MainActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
 
@@ -41,10 +43,10 @@ public class MainActivity extends ListActivity {
         );
 
             mAdapter = new CustomAdapter(this);
-            for (int i = 1; i < 30; i++) {
-                mAdapter.addItem("Row Item #" + i);
-                if (i % 4 == 0) {
-                    mAdapter.addSectionHeaderItem("Section #" + i);
+            for (int j = 1; j < 5; j++){
+                mAdapter.addSectionHeaderItem("Section #" + j);
+                for (int i = 1; i < 5; i++) {
+                    mAdapter.addItem("Row Item #" + i);
                 }
             }
             setListAdapter(mAdapter);
