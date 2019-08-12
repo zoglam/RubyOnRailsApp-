@@ -2,6 +2,12 @@ class ProjectController < ApplicationController
     def index
         @projects = Project.all.order(:id)
         @todos = Todo.all.order(:id)
+
+        @projectJSON = Project.all
+        respond_to do |format|
+            format.html {}
+            format.json { render :json => @projectJSON}
+        end
     end
 
     def show
