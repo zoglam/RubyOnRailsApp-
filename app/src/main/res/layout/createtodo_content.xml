@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/createtodo_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentStart="true"
+    android:paddingTop="?android:actionBarSize"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.zoglam.rubyonrailsapp.CreateActivity"
+    tools:showIn="@layout/createtodo_content">
+
+    <LinearLayout
+        android:id="@+id/cardviewLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:weightSum="2"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_set"
+        android:padding="15dp"
+        android:text="@string/activity_title"
+        android:textAllCaps="true"
+        android:textColor="@color/systemBlackColor"
+        android:textIsSelectable="false"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        />
+
+    <EditText
+        android:id="@+id/EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/createtodo_hint"
+        android:inputType="textCapSentences|textAutoCorrect"
+        android:padding="10dp"
+        android:layout_margin="20dp"
+        android:background="@drawable/edittextstyle"/>
+
+    <TextView
+        android:text="@string/createtodo_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textIsSelectable="false"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:padding="15dp"
+        android:textSize="13sp"
+        android:textColor="@color/systemBlackColor"
+        android:background="@drawable/border_set"/>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/projectsList"
+        android:textSize="13sp"
+        fontPath="fonts/OpenSans-Light.ttf"/>
+
+    </LinearLayout>>
+</RelativeLayout>

@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="com.example.zoglam.rubyonrailsapp.MainActivity"
+    android:background="@color/systemWhiteColor"
+    app:statusBarBackground="@color/colorAccent"
+    android:fitsSystemWindows="true">
 
-    <include layout="@layout/toolbar" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/accentColor" >
 
-    <include layout="@layout/content_main" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/activity_title"
+            android:textColor="@color/backgroundColor"
+            fontPath="fonts/OpenSans-Light.ttf"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/listView"
+        android:divider="@null"
+        android:paddingTop="?android:actionBarSize"
+        fontPath="fonts/OpenSans-Light.ttf"/>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -16,6 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/fab_plus_icon" />
+        app:backgroundTint="@color/pinkSearch"
+        android:src="@drawable/fab_plus_icon"/>
 
 </android.support.design.widget.CoordinatorLayout>
