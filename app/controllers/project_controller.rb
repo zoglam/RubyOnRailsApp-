@@ -6,7 +6,7 @@ class ProjectController < ApplicationController
         @projectJSON = Project.all
         respond_to do |format|
             format.html {}
-            format.json { render :json => @projectJSON}
+            format.json { render :json => @projectJSON.to_json(:include => :todos)}
         end
     end
 
@@ -15,9 +15,9 @@ class ProjectController < ApplicationController
         @newTodo = Todo.find(params[:id])
     end
 
-    def createTodo
+    def create
         @newTodo = Todo.create(todo_params)
-        @newTodo.update_attribute(:isCompleted, false)
+        @newTodo.isCompleted = false
 
         if @newTodo.save
             redirect_to root_path

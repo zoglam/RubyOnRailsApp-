@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'project' => 'project#index'
-  post 'project/createTodo' => 'project#createTodo'
-  post 'project/completedTodo' => 'project#completedTodo'
+  get 'project/index'
+  get 'project/todos'
+  post 'project/createTodo'
+  put 'project/completedTodo'
   root 'project#index'
 
   resources :project

@@ -1,0 +1,10 @@
+<div id="div_addTodo" class="div_addTodo">
+    <p class="title_new_todo">НОВАЯ ЗАДАЧА</p>
+    <%= form_for :newTodo, id:'form_id', :url => {:action => "create"} do |f2| %>
+      <%= f2.text_field :text, placeholder: "Название задачи..." %><br />
+      <%= f2.collection_select :project_id, @projects, :id, :title, {:prompt => "Категория"} %>
+      <%= f2.submit "OK", class: "submit_bnt_real", style: "display: none" %>
+    <%end%>
+    <%= link_to 'ОТМЕНА', "", class: "hideDiv" %>
+    <%= link_to 'OK', "", class: "submit_bnt_fake" %>
+  </div>
