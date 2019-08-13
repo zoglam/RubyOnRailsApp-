@@ -23,4 +23,4 @@ Things you may want to cover:
 
 ## Изображения
 [<img src="https://live.staticflickr.com/65535/48529159686_21adf3f314_k.jpg" width=405>](https://live.staticflickr.com/65535/48529159686_21adf3f314_k.jpg)
-[<img src="https://live.staticflickr.com/65535/48529316717_e6d7c661c1_z.jpg" width=405>](https://live.staticflickr.com/65535/48529316717_e6d7c661c1_z.jpg)
+[<img src="https://live.staticflickr.com/65535/48529316717_926e47d30b_k.jpg" width=405>](https://live.staticflickr.com/65535/48529316717_926e47d30b_k.jpg)
