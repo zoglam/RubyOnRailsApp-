@@ -21,6 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-> Изображения:
-<img src='https://live.staticflickr.com/341/19301964255_ffe90ccf68_z.jpg' />
-<img src='https://live.staticflickr.com/493/19114395498_4d32faccf1_z.jpg' />
+## Изображения
+[<img src="https://live.staticflickr.com/65535/48529159686_21adf3f314_k.jpg" width=405>](https://live.staticflickr.com/65535/48529159686_21adf3f314_k.jpg)
+[<img src="https://live.staticflickr.com/65535/48529316717_e6d7c661c1_z.jpg" width=405>](https://live.staticflickr.com/65535/48529316717_e6d7c661c1_z.jpg)
