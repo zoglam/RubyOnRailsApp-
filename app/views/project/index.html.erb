@@ -11,24 +11,17 @@
       <div class="container">
   <div class="row">
     <div class="col-sm">
-        <% @projects.each do |project| %>
-        
+        <% @projects.each do |project| %>        
           <div id="project_div">
             <p><%= project.title %></p>
             <% @todos.each do |newTodo| %>
               <% if newTodo.project_id == project.id %>      
-                <%= form_for :completedTodo, id:'form_id', method: "put", :url => {:action => "completedTodo"} do |f1| %>
-                  <%= f1.text_field :id, value: newTodo.id, class: "const_id_todo", style: "display: none"  %>
-                  <% if newTodo.isCompleted == false %>
-                    <%= f1.check_box :isCompleted, class: 'check_todo', checked: "unchecked", id: newTodo.id%>
-                  <%else%>
-                    <%= f1.check_box :isCompleted, class: 'check_todo', checked: "checked", id: newTodo.id%>
-                  <%end%>
-                  <span class="line_width">
-                    <span class="text_todo_<%=String(newTodo.id)%>", id="text_todo"><%= newTodo.text %></span>
-                  </span>
-                  <%= f1.submit "OK", class: "submit_bnt_real_isCompleted_"+String(newTodo.id), style: "display: none" %><br />
-                <% end %>
+                <%= form_tag url_for(action: "update", id: newTodo.id), id: "form_Checkbox", method: "put" do %>                
+                <%= check_box_tag "check_Checkbox", newTodo.id, newTodo.isCompleted == true %>
+                <span class="line_width">
+                  <span class="text_todo_<%=String(newTodo.id)%>", id="text_todo"><%= newTodo.text %></span>
+                </span>                         
+                <% end %>                
               <% end %>
             <% end %>
           </div>

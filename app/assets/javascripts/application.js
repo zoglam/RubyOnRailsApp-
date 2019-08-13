@@ -18,12 +18,13 @@
 
 $(document).ready(function () {
 
-  $('.check_todo').iCheck({
+  $('input').iCheck({
     checkboxClass: 'icheckbox_square-blue'
   });
 
-  $('.check_todo').on('ifChanged', function () {
-    $(".submit_bnt_real_isCompleted_" + this.id).click();
+  $('input').on('ifClicked', function (event) {
+    event.preventDefault();
+    this.form.submit();
   });
 
   $("#imagePlus").click(function () {

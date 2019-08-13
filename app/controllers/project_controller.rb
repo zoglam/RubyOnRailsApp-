@@ -18,18 +18,18 @@ class ProjectController < ApplicationController
     def create
         @newTodo = Todo.create(todo_params)
         @newTodo.isCompleted = false
-
-        if @newTodo.save
-            redirect_to root_path
-        else
-            render root_path
-        end
+        @newTodo.save
+        redirect_to root_path
     end
 
-    def completedTodo
-        @currTodo = Todo.find(todo_param_id[:id])
-		@currTodo.update_attributes(todo_param_isCompleted)
-		redirect_to root_path
+    def update
+        @currTodo = Todo.find(todo_param_isCompleted)
+		if @currTodo.isCompleted == false
+            @currTodo.isCompleted = true
+          else
+            @currTodo.isCompleted = false
+          end
+          @currTodo.save
     end
 
     private
@@ -39,11 +39,7 @@ class ProjectController < ApplicationController
     end   
 
     def todo_param_isCompleted
-        params.require(:completedTodo).permit(:isCompleted)
-    end
-
-    def todo_param_id
-        params.require(:completedTodo).permit(:id)
+        params[:id]
     end
 
 end
