@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">CreateActivity</string>
+    <string name="kIndexRequest">https://rubyappheroku.herokuapp.com/?format=json</string>
+    <string name="alarmBAD">Input data and select category!</string>
+    <string name="alarmGOOD">Data sent!</string>
+    <string name="createtodo_title">Новая задача</string>
+    <string name="activity_title">Задачи</string>
+    <string name="createtodo_hint">Название задачи&#8230;</string>
+    <string name="createtodo_category">Категории</string>
+</resources>
